@@ -13,6 +13,7 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://Prajwal327:Prajwal327@c
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error(err));
 
+
 // Job Schema
 const jobSchema = new mongoose.Schema({
   company: { type: String, required: true },
@@ -64,7 +65,7 @@ app.delete('/api/jobs/:id', async (req, res) => {
   res.json({ message: "Deleted" });
 });
 
-const PORT = 5000;
+  const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
