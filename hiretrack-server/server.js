@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/hiretrack')
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://Prajwal327:Prajwal327@cluster0.5ffgdxw.mongodb.net/?appName=Cluster0')
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error(err));
 
@@ -66,3 +66,6 @@ app.delete('/api/jobs/:id', async (req, res) => {
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+module.exports = app;
